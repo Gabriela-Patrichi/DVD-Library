@@ -96,21 +96,6 @@ public class DvdDto {
         this.userNote = userNote;
     }
 
-
-/*    @Override
-    public String toString() {
-        return
-                "DVD ID: " + dvdId +
-                ", DVD title: '" + title +
-                ", Release date: " + releaseDate +
-                ", MPAA rating: '" + ratingMPAA  +
-                ", Director: '" + directorName  +
-                ", Studio: '" + studio  +
-                ", Rating: " + userRating +
-                ", Note: '" + userNote  +
-                '}';
-    }*/
-
     @Override
     public String toString() {
         return
