@@ -31,7 +31,7 @@ Further Improvements Considerations
 - DVD ID - instead of user input, allocate it automatically (formula to increase it by 1 each time for ex)
 - Create copies - esp when adding, updating an object/collection,
                 - good practice to make a copy of the item which will be returned, as a precaution (in case the user would )
-- Improve the System.out/in location (ie don't keep it in methods outside presentation layer)
+- Improve the System.out/in location (i.e. don't keep it in methods outside presentation layer)
 - LocalDate - instead of Localdate.of(int,int,int), could use LocalDate.parse(String yyyy-mm-dd) to grab user input
 
 
