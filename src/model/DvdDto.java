@@ -97,17 +97,31 @@ public class DvdDto {
     }
 
 
+/*    @Override
+    public String toString() {
+        return
+                "DVD ID: " + dvdId +
+                ", DVD title: '" + title +
+                ", Release date: " + releaseDate +
+                ", MPAA rating: '" + ratingMPAA  +
+                ", Director: '" + directorName  +
+                ", Studio: '" + studio  +
+                ", Rating: " + userRating +
+                ", Note: '" + userNote  +
+                '}';
+    }*/
+
     @Override
     public String toString() {
-        return "DvdDto{" +
+        return
                 "dvdId=" + dvdId +
-                ", title='" + title + '\'' +
+                ", title=" + title +
                 ", releaseDate=" + releaseDate +
-                ", ratingMPAA='" + ratingMPAA + '\'' +
-                ", directorName='" + directorName + '\'' +
-                ", studio='" + studio + '\'' +
+                ", ratingMPAA=" + ratingMPAA +
+                ", directorName=" + directorName  +
+                ", studio=" + studio  +
                 ", userRating=" + userRating +
-                ", userNote='" + userNote + '\'' +
+                ", userNote=" + userNote  +
                 '}';
     }
 }

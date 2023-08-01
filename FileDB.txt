@@ -1,0 +1,1 @@
+dvdId=1, title=First DVD saved to File, releaseDate=2023-08-01, ratingMPAA=18+, directorName=Gabriela, studio=GabbyLand, userRating=5, userNote=Awesome}

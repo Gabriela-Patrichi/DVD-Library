@@ -3,7 +3,6 @@ DVD Library Exercise
 
 Model:
 ------------------------------------------------------------------------------------------------------------------
-
 String title
 LocalDate releaseDate
 String ratingMPAA
@@ -23,8 +22,16 @@ The program must do the following:
 6. Allow the user to search for a DVD by title
 7. Load the DVD library from a file
 8. Save the DVD library back to the file when the program completes
-9. Allow the user to add, edit, or delete many DVDs in one session
 
-(Note: Additionally, the program must follow the MVC design pattern and use dependency injection)
+-------------------------------------------------------------------------------------------------------------------
+Further Improvements Considerations
+-------------------------------------------------------------------------------------------------------------------
+
+- Exception Handling - many Scanner inputs would need to be validated
+- DVD ID - instead of user input, allocate it automatically (formula to increase it by 1 each time for ex)
+- Create copies - esp when adding, updating an object/collection,
+                - good practice to make a copy of the item which will be returned, as a precaution (in case the user would )
+- Improve the System.out/in location (ie don't keep it in methods outside presentation layer)
+- LocalDate - instead of Localdate.of(int,int,int), could use LocalDate.parse(String yyyy-mm-dd) to grab user input
 
 

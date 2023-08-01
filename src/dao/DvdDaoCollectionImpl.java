@@ -28,52 +28,14 @@ public class DvdDaoCollectionImpl implements DvdDao{
     @Override
     public DvdDto addDVD(DvdDto newDVD) {
 
-/*          THIS METHOD IS NOW IN MAIN AS GET DVDINFO(), USE ITS RETURN OBJECT VALUE TO PASS IT AS A PARAMETER IN THE ADDDVD METHOD HERE
-        //take user input for DVD details:
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Insert Dvd Id:");
-        int dvdId = input.nextInt();
-        // newDvd.setDvdId(dvdId);
-
-        System.out.println("Insert Dvd Title:");
-        String dvdTitle = input.next();
-        //newDvd.setTitle(dvdTitle);
-
-        System.out.println("Insert Dvd Date: YYYY\n" +
-                "MM\n" +
-                "DD");
-        LocalDate dvdDate = LocalDate.of(input.nextInt(),input.nextInt(),input.nextInt());
-
-        System.out.println("Insert MPAA rating:");
-        String dvdMPAARating = input.next();
-
-        System.out.println("Insert director's name:");
-        String directorName = input.next();
-
-        System.out.println("Insert studio name:");
-        String studio = input.next();
-
-        System.out.println("Rating,from 1 to 5 (1 being the lowest and 5 the highest)");
-        int userRating= input.nextInt();
-
-        System.out.println("Leave a short review:");
-        String review = input.next();
-
-        //use user values to create a new DVD object, instance of DvdDto class
-        DvdDto userDVD = new DvdDto(dvdId,dvdTitle,dvdDate,dvdMPAARating,directorName,studio,userRating,review);
-
-        //return the new DVD object
-        return userDVD;
-      */
-
         // add the parameter object to the collection of DVDs
         dvdLibrary.add(newDVD);
+
         //return object
         return newDVD;
     }
 
-    //method to remove a dvd, taking as parameter an int (user input)
+    //method to remove a dvd, taking as parameter an int
     @Override
     public void removeDVD(int dvdId) {
         // loop through the array list and look for the DVD object with corresponding ID
@@ -87,26 +49,16 @@ public class DvdDaoCollectionImpl implements DvdDao{
     @Override
     public DvdDto updateDVD(DvdDto updateDVD) {
 
-        DvdDto updateDvd = null;
-        System.out.println("Enter the DVD id:");
-        Scanner input = new Scanner(System.in);
-        int getDvdId = input.nextInt();
+//  Rewrote method not to include any Scanner (user interaction - which has instead now been passed to App main)
 
         // loop through the array list and look for the DVD object with corresponding ID
         for(int i=0; i<dvdLibrary.size(); i++){
-            if (dvdLibrary.get(i).getDvdId()== getDvdId ){
-                //method to update the title (similarly could be done for any other var/ attribute)
-                System.out.println("Current DVD details are: " + dvdLibrary.get(i).toString());
-                updateDvd = dvdLibrary.get(i);
-
-                System.out.println("Please update the DVD title: ");
-                String newDvdUpdate = input.next();
-                updateDvd.setTitle(newDvdUpdate);
-                System.out.println("New DVD details are:" + updateDvd.toString());
-
+            if (dvdLibrary.get(i).getDvdId()== updateDVD.getDvdId() ){
+                //once found, store the object at that index
+                updateDVD = dvdLibrary.get(i);
             }
         }
-        return updateDvd;
+        return updateDVD; //return object
     }
 
     @Override
@@ -125,8 +77,9 @@ public class DvdDaoCollectionImpl implements DvdDao{
 
         for (int i = 0; i < dvdLibrary.size(); i++) {
             if (dvdLibrary.get(i).getDvdId() == dvdId) {
-                System.out.println("Details for DVD are:" + dvdLibrary.get(i).toString());
                 retrieveDvd = dvdLibrary.get(i);
+
+                //BETTER TO CREATE COPIES - LOOSE COOPLING
             }
         }
         return retrieveDvd;
@@ -138,21 +91,16 @@ public class DvdDaoCollectionImpl implements DvdDao{
         DvdDto retrieveDvd = null;
 
         for (int i=0; i<dvdLibrary.size();i++){
-            if(dvdLibrary.get(i).getTitle()== title){
-                System.out.println("Details for this DVD are:" + dvdLibrary.get(i).toString());
+            if(dvdLibrary.get(i).getTitle().equals(title)){
                 retrieveDvd = dvdLibrary.get(i);
             }
         }
         return retrieveDvd;
     }
 
-    @Override
-    public List<DvdDto> retrieveDvdLibrary() {
-        return null;
-    }
 
     @Override
-    public boolean saveToFile(List<DvdDto> dvdLibrary) {
+    public boolean saveToFile() {
         return false;
     }
 

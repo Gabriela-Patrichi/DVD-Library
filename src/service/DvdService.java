@@ -1,28 +1,14 @@
-package dao;
+package service;
 
 import model.DvdDto;
 
 import java.util.List;
 
-public interface DvdDao {
+public interface DvdService {
 
-    //one should not be able to access the class directly, thus a DVDDao interface,
-    // which will contain the methods (from user stories) which relate to DVDs
+    //the functionalities will correspond to the DvdDao interface;
+    //Keep the same method names across layers for convenience
 
- /*
- *
- * The program must do the following:
-1. Allow the user to add a DVD to the collection
-2. Allow the user to remove a DVD from the collection
-3. Allow the user to edit the information for an existing DVD in the collection
-4. Allow the user to list the DVDs in the collection
-5. Allow the user to display the information for a particular DVD
-6. Allow the user to search for a DVD by title
-7. Load the DVD library from a file
-8. Save the DVD library back to the file when the program completes
-9. Allow the user to add, edit, or delete many DVDs in one session
-*
- */
 
     //method to add a DVD to the collection, takes in a DvdDto object as arg and will return a DvdDto (Pojo) type of object
     DvdDto addDVD(DvdDto newDVD);
@@ -33,7 +19,7 @@ public interface DvdDao {
     //method to update an existing DVD, taking Dvd model object as parameter; returns DVD object to the collection
     DvdDto updateDVD(DvdDto newDVD);
 
-    //method to display all DVDs; returns a collection;
+    //method to display all DVDs in the collection
     List<DvdDto> retrieveAllDVDs();
 
     //display the information for a particular DVD, using an int as parameter; return the DVS object
@@ -44,5 +30,4 @@ public interface DvdDao {
 
     //save the DVD library to file
     boolean saveToFile();
-
 }
