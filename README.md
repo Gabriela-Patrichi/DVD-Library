@@ -1,7 +1,7 @@
 # Java: DVD Library Project
 
 **Overview**
-The purpose of this project is to demonstrate proficiency in basic Java syntax involving console input and output, basic file input and output, basic string/text manipulation, flow of control statements, expressions, and basic data structures such as arrays, Lists, and Maps. Additionally, you will demonstrate your proficiency in implementing the MVC design pattern and dependency injection.
+The purpose of this project is to demonstrate proficiency in basic Java syntax involving console input and output, basic file input and output, basic string/text manipulation, flow of control statements, expressions, and basic data structures such as arrays, Lists, and Maps. 
 
 **Requirements**
 In this assessment, you will create a program that stores information about a DVD collection. The program must do the following:
